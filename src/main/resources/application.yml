@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  freemarker:
+    charset: UTF-8
+    cache: false
+    expose-request-attributes: true
+    request-context-attribute: request
+    expose-session-attributes: true
+    content-type: text/html
+    template-loader-path: classpath:/web/
+    suffix: .ftl
+    check-template-location: true
+
+server:
+  port: 9090
+  servlet.context-path: /bootone
+
+
+## Mybatis 配置
+mybatis:
+  typeAliasesPackage: com.keith.*.model
+  mapperLocations: classpath:mapper/*.xml
